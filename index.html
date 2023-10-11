@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>request Page</title>
+   <style>
+      *{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Gilroy';
+}
+html,body{
+   height: 100%;
+   width: 100%;
+  
+}
+body{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color:cornflowerblue;
+}
+#card{
+   height: 450px;
+   width: 300px;
+   background-color:white;
+   border-radius: 10px;
+   padding:30px;
+   text-align: center;
+
+}
+#card img{
+   height: 50%;
+   width: 100% ;
+   object-fit: cover;
+   object-position: center;
+   border-radius: 10px ;
+}
+#card h1{
+   font-size: 25px;
+   margin:10px;
+   font-weight: 700;
+}
+#card h5{
+   font-size: 25px;
+   color:red;
+   margin-bottom: 20px;
+}
+#card button{
+   background-color: cadetblue;
+   color: #fff;
+   font-weight: 700;
+   padding: 12px 20px;
+   border-radius: 5px;
+   border: none;
+   margin: 5px; 
+   cursor: pointer;
+}
+#card #remove{
+   background-color: #dadada;
+   color: black;
+}
+   </style>
+</head>
+<body>
+   <div id="card">
+    <img src=" https://images.unsplash.com/photo-1602233158242-3ba0ac4d2167?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="">
+    <h1>Angel Priya</h1>
+    <h5>Stranger</h5>
+    <div id="btn_container">
+      <!-- <button id="remove">Remove</button> -->
+      <button id="add">Add Friend</button>
+    </div>
+    </div>
+</body>
+<script>
+const store=document.querySelector("h5");
+const add_btn=document.querySelector("#add");
+const remove_btn=document.querySelector("#remove");
+let flag=0;
+add_btn.addEventListener("click",function(){
+   if(flag===0)
+   {
+   store.textContent="Friends"
+   store.style.color="green"
+   add_btn.textContent="Remove"
+   flag=1;
+   }
+   else
+      { 
+         store.textContent="Stranger";
+         store.style.color="red";
+         add_btn.textContent="Add Freind";
+         // add_btn.style.color="red";
+         flag=0;
+      }
+});
+</script>
+</html>
